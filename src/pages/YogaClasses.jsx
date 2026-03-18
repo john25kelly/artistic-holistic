@@ -45,6 +45,18 @@ export default function YogaClasses() {
               <Link to="/contact" className="btn" style={{ marginTop: '8px' }}>Book Now</Link>
             </div>
           </div>
+
+          {/* Featured class card */}
+          <div className="yoga-featured-class">
+            <div className="yoga-featured-class__badge">Now Available</div>
+            <h3 className="yoga-featured-class__title">Yoga Class, Live and on-line</h3>
+            <p className="yoga-featured-class__desc">
+              Can't make it to the Bridge Centre in person? Join Patricia's yoga classes live online
+              from the comfort of your own home. Suitable for all levels — all you need is a mat and
+              a little space!
+            </p>
+            <Link to="/contact" className="btn">Enquire Now</Link>
+          </div>
         </div>
       </section>
 

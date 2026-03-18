@@ -8,14 +8,14 @@ const categories = [
     label: 'Landscapes',
     path: '/gallery/landscapes',
     emoji: '🌄',
-    count: 13,
+    count: 16,
     description: 'Rolling green hills, misty mountains and the wild Irish countryside captured in oil, watercolour and acrylic.',
   },
   {
     label: 'Seascapes',
     path: '/gallery/seascapes',
     emoji: '🌊',
-    count: 11,
+    count: 14,
     description: 'The dramatic Atlantic coastline — crashing waves, peaceful harbours and sun-drenched shores.',
   },
   {
@@ -29,7 +29,7 @@ const categories = [
     label: 'Animals',
     path: '/gallery/animals',
     emoji: '🦋',
-    count: 4,
+    count: 5,
     description: 'Detailed and evocative portraits of animals — from Irish wildlife to beloved pets, rendered with care.',
   },
 ];
@@ -52,7 +52,7 @@ export default function Gallery() {
             <h2 className="section-title">Browse by Category</h2>
             <div className="section-divider" style={{ margin: '0 auto 16px' }} />
             <p style={{ maxWidth: '560px', margin: '0 auto' }}>
-              Each piece in our gallery is created with passion and skill. Many works are available to purchase — visit our <Link to="/shop">Shop</Link> for details.
+              Each piece in our gallery is created with passion and skill. Many works are available to purchase — <Link to="/contact">get in touch</Link> to enquire.
             </p>
           </div>
           <div className="gallery-categories__grid">
@@ -81,12 +81,10 @@ export default function Gallery() {
           <div className="section-divider" style={{ margin: '0 auto 20px' }} />
           <p>Many of our artworks are available to buy as originals or as high-quality prints.</p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', marginTop: '20px', flexWrap: 'wrap' }}>
-            <Link to="/shop" className="btn">Visit the Shop</Link>
-            <Link to="/contact" className="btn btn-outline">Contact Us</Link>
+            <Link to="/contact" className="btn">Contact Us</Link>
           </div>
         </div>
       </section>
     </>
   );
 }
-

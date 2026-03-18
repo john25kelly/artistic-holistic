@@ -93,6 +93,45 @@
   margin-bottom: 20px;
 }
 
+/* ─── Featured class card ───────────────────────────────────────────── */
+.yoga-featured-class {
+  margin-top: 40px;
+  background: linear-gradient(135deg, #1a3a30 0%, #30a080 100%);
+  border-radius: 10px;
+  padding: 32px 36px;
+  color: #ffffff;
+  position: relative;
+}
+
+.yoga-featured-class__badge {
+  display: inline-block;
+  background: rgba(255,255,255,0.2);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+}
+
+.yoga-featured-class__title {
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  padding-bottom: 0;
+}
+
+.yoga-featured-class__desc {
+  color: rgba(255,255,255,0.85);
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 540px;
+  margin-bottom: 20px;
+}
+
 @media (max-width: 900px) {
   .yoga-benefits__grid { grid-template-columns: repeat(2, 1fr); }
   .yoga-sessions__grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
@@ -102,4 +141,3 @@
 @media (max-width: 500px) {
   .yoga-benefits__grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
 }
-

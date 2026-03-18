@@ -13,7 +13,6 @@ const navItems = [
       { label: 'Reiki Healing', path: '/reiki-healing' },
     ],
   },
-  { label: 'Shop', path: '/shop' },
   {
     label: 'Gallery',
     path: '/gallery',

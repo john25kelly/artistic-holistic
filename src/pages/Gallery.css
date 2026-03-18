@@ -116,14 +116,43 @@
   font-size: 14px;
   font-weight: 600;
   color: #333;
-  padding-bottom: 2px;
-  margin-bottom: 2px;
+  padding-bottom: 8px;
+  margin-bottom: 0;
 }
 
-.gallery-item__meta {
-  font-size: 12px;
-  color: #888;
-  padding-bottom: 0;
+.gallery-item__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 8px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.gallery-item__price {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #30709c;
+}
+
+.gallery-item__enquire {
+  padding: 5px 12px !important;
+  font-size: 11px !important;
+  letter-spacing: 1px;
+}
+
+.gallery-item__sold-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.65);
+  color: #ffffff;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 3px;
 }
 
 .gallery-back-link {

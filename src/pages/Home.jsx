@@ -123,7 +123,7 @@ export default function Home() {
           <div className="text-center" style={{ marginBottom: '32px' }}>
             <h2 className="section-title">Art For Sale</h2>
             <div className="section-divider" style={{ margin: '0 auto 16px' }} />
-            <p>Here is a small selection of my paintings. Please check out my Shop for more art for sale.</p>
+              <p>Here is a small selection of my paintings. Please visit the Gallery to see more art for sale.</p>
           </div>
           <div className="home-shop__grid">
             {shopItems.map((item) => (
@@ -137,7 +137,7 @@ export default function Home() {
             ))}
           </div>
           <div className="text-center" style={{ marginTop: '32px' }}>
-            <Link to="/shop" className="btn">More Paintings</Link>
+              <Link to="/gallery" className="btn">View Gallery</Link>
           </div>
         </div>
         </section>

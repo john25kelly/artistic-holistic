@@ -6,7 +6,6 @@ import Home from './pages/Home';
 import FineArtClasses from './pages/FineArtClasses';
 import YogaClasses from './pages/YogaClasses';
 import ReikiHealing from './pages/ReikiHealing';
-import Shop from './pages/Shop';
 import Gallery from './pages/Gallery';
 import GalleryCategory from './pages/GalleryCategory';
 import Contact from './pages/Contact';
@@ -22,7 +21,6 @@ function App() {
           <Route path="/fine-art-classes" element={<FineArtClasses />} />
           <Route path="/yoga-classes" element={<YogaClasses />} />
           <Route path="/reiki-healing" element={<ReikiHealing />} />
-          <Route path="/shop" element={<Shop />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/gallery/:category" element={<GalleryCategory />} />
           <Route path="/contact" element={<Contact />} />
