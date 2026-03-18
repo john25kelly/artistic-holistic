@@ -3,19 +3,21 @@ import { Link } from 'react-router-dom';
 import './FineArtClasses.css';
 import './Shop.css';
 
+const pub = process.env.PUBLIC_URL;
+
 const products = [
-  { id: 1,  title: '6-Week Online Yoga Class',                  price: '30.00',  salePrice: null,     badge: 'Yoga',     image: '/images/shop/yoga-class.jpg' },
-  { id: 2,  title: 'Red Dragon in Storm Kathleen',               price: '150.00', salePrice: null,     badge: 'Painting', image: '/images/shop/red-dragon.png' },
-  { id: 3,  title: '17 : The Old Lamps',                        price: '300.00', salePrice: null,     badge: 'Painting', image: '/images/shop/old-lamps.jpg' },
-  { id: 4,  title: 'Squirrel in a Pot',                         price: '65.00',  salePrice: null,     badge: 'Painting', image: '/images/shop/squirrel-in-a-pot.jpg' },
-  { id: 5,  title: 'Inch Abbey',                                price: '260.00', salePrice: null,     badge: 'Painting', image: '/images/shop/inch-abbey.jpg' },
-  { id: 6,  title: 'Look What I Nearly Mist.',                  price: '360.00', salePrice: null,     badge: 'Painting', image: '/images/shop/look-what-i-nearly-mist.jpg' },
-  { id: 7,  title: 'The Wave – SOLD but Repeatable',            price: null,      salePrice: null,     badge: 'Painting', image: '/images/shop/the-wave.jpg' },
-  { id: 8,  title: '34 : We Are Sailing',                       price: '190.00', salePrice: null,     badge: 'Painting', image: '/images/shop/we-are-sailing.png' },
-  { id: 9,  title: 'Mooove Over',                               price: '300.00', salePrice: null,     badge: 'Painting', image: '/images/shop/mooove-over.jpg' },
-  { id: 10, title: '30 : The Old Building',                     price: '250.00', salePrice: null,     badge: 'Painting', image: '/images/shop/the-old-building.jpg' },
-  { id: 11, title: '57 : Water Lillies',                        price: '150.00', salePrice: null,     badge: 'Painting', image: '/images/shop/water-lillies.jpg' },
-  { id: 12, title: '26 : The Laneway – Limited Edition Print',  price: '70.00',  salePrice: null,     badge: 'Print',    image: '/images/shop/the-laneway.jpg' },
+  { id: 1,  title: '6-Week Online Yoga Class',                  price: '30.00',  badge: 'Yoga',     image: `${pub}/images/shop/yoga-class.jpg` },
+  { id: 2,  title: 'Red Dragon in Storm Kathleen',               price: '150.00', badge: 'Painting', image: `${pub}/images/shop/red-dragon.png` },
+  { id: 3,  title: '17 : The Old Lamps',                        price: '300.00', badge: 'Painting', image: `${pub}/images/shop/old-lamps.jpg` },
+  { id: 4,  title: 'Squirrel in a Pot',                         price: '65.00',  badge: 'Painting', image: `${pub}/images/shop/squirrel-in-a-pot.jpg` },
+  { id: 5,  title: 'Inch Abbey',                                price: '260.00', badge: 'Painting', image: `${pub}/images/shop/inch-abbey.jpg` },
+  { id: 6,  title: 'Look What I Nearly Mist.',                  price: '360.00', badge: 'Painting', image: `${pub}/images/shop/look-what-i-nearly-mist.jpg` },
+  { id: 7,  title: 'The Wave – SOLD but Repeatable',            price: null,     badge: 'Painting', image: `${pub}/images/shop/the-wave.jpg` },
+  { id: 8,  title: '34 : We Are Sailing',                       price: '190.00', badge: 'Painting', image: `${pub}/images/shop/we-are-sailing.png` },
+  { id: 9,  title: 'Mooove Over',                               price: '300.00', badge: 'Painting', image: `${pub}/images/shop/mooove-over.jpg` },
+  { id: 10, title: '30 : The Old Building',                     price: '250.00', badge: 'Painting', image: `${pub}/images/shop/the-old-building.jpg` },
+  { id: 11, title: '57 : Water Lillies',                        price: '150.00', badge: 'Painting', image: `${pub}/images/shop/water-lillies.jpg` },
+  { id: 12, title: '26 : The Laneway – Limited Edition Print',  price: '70.00',  badge: 'Print',    image: `${pub}/images/shop/the-laneway.jpg` },
 ];
 
 const badgeColours = {
