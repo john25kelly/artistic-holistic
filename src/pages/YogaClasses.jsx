@@ -47,7 +47,10 @@ export default function YogaClasses() {
           </div>
 
           {/* Featured class card */}
-          <div className="yoga-featured-class">
+          <div
+            className="yoga-featured-class"
+            style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/images/shop/yoga-class.jpg)` }}
+          >
             <div className="yoga-featured-class__badge">Now Available</div>
             <h3 className="yoga-featured-class__title">Yoga Class, Live and on-line</h3>
             <p className="yoga-featured-class__desc">

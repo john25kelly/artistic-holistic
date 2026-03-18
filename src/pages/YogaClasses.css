@@ -96,11 +96,30 @@
 /* ─── Featured class card ───────────────────────────────────────────── */
 .yoga-featured-class {
   margin-top: 40px;
-  background: linear-gradient(135deg, #1a3a30 0%, #30a080 100%);
+  background-color: #1a3a30;
+  background-size: cover;
+  background-position: center;
   border-radius: 10px;
   padding: 32px 36px;
   color: #ffffff;
   position: relative;
+  overflow: hidden;
+}
+
+.yoga-featured-class::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(26,58,48,0.88) 0%, rgba(48,160,128,0.75) 100%);
+  border-radius: 10px;
+}
+
+.yoga-featured-class__badge,
+.yoga-featured-class__title,
+.yoga-featured-class__desc,
+.yoga-featured-class .btn {
+  position: relative;
+  z-index: 1;
 }
 
 .yoga-featured-class__badge {
