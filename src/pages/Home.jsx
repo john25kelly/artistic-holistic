@@ -48,6 +48,39 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ARTISTIC / HOLISTIC split panels */}
+      <section className="home-split">
+        <div
+          className="home-split__panel"
+          style={{ backgroundImage: `url(${pub}/images/home/bg-artistic.jpg)` }}
+        >
+          <div className="home-split__overlay" />
+          <div className="home-split__content">
+            <h2>ARTISTIC</h2>
+            <div className="home-split__divider" />
+            <Link to="/fine-art-classes" className="btn">Art Classes</Link>
+          </div>
+        </div>
+        <div
+          className="home-split__panel"
+          style={{ backgroundImage: `url(${pub}/images/home/bg-holistic.jpg)` }}
+        >
+          <div className="home-split__overlay" />
+          <div className="home-split__content">
+            <h2>HOLISTIC</h2>
+            <div className="home-split__divider" />
+            <Link to="/yoga-classes" className="btn">Yoga Classes</Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Photo strip */}
+      <div className="home-photo-strip">
+        <img src={`${pub}/images/home/strip-1.jpg`} alt="Fine art painting class" />
+        <img src={`${pub}/images/home/strip-2.jpg`} alt="Fine art and yoga" />
+        <img src={`${pub}/images/home/strip-3.jpg`} alt="Outdoor painting" />
+      </div>
+
       {/* Painting Classes intro */}
       <section className="section home-painting">
         <div className="container home-painting__grid">
@@ -105,6 +138,24 @@ export default function Home() {
           </div>
           <div className="text-center" style={{ marginTop: '32px' }}>
             <Link to="/shop" className="btn">More Paintings</Link>
+          </div>
+        </div>
+        </section>
+
+      {/* Videos */}
+      <section className="section home-videos">
+        <div className="container">
+          <div className="text-center" style={{ marginBottom: '36px' }}>
+            <h2 className="section-title">Watch Patricia in Action</h2>
+            <div className="section-divider" style={{ margin: '0 auto' }} />
+          </div>
+          <div className="home-videos__grid">
+            <video controls className="home-videos__video" preload="metadata">
+              <source src={`${pub}/images/home/video-1.mp4`} type="video/mp4" />
+            </video>
+            <video controls className="home-videos__video" preload="metadata">
+              <source src={`${pub}/images/home/video-2.mp4`} type="video/mp4" />
+            </video>
           </div>
         </div>
       </section>
