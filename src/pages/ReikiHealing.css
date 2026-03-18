@@ -1,0 +1,172 @@
+.reiki-intro {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 50px;
+  align-items: start;
+}
+
+.reiki-intro__benefits {
+  background: linear-gradient(135deg, #3a1a1a 0%, #a03060 100%);
+  border-radius: 10px;
+  padding: 28px 24px;
+  color: #ffffff;
+}
+
+.reiki-intro__benefits h4 {
+  color: #ffffff;
+  font-size: 16px;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+.reiki-benefit-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 0;
+  color: rgba(255,255,255,0.9);
+  font-size: 13px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+
+.reiki-benefit-item:last-child { border-bottom: none; }
+
+.reiki-benefit-item__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: rgba(255,255,255,0.6);
+  flex-shrink: 0;
+}
+
+/* ─── Session options ───────────────────────────────────────────────── */
+.reiki-sessions-section { background-color: #f8f9fa; }
+
+.reiki-sessions__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.reiki-session-card {
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.reiki-session-card:hover {
+  box-shadow: 0 8px 28px rgba(160,48,96,0.12);
+  transform: translateY(-3px);
+}
+
+.reiki-session-card__icon {
+  font-size: 36px;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.reiki-session-card__title {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 8px;
+  padding-bottom: 0;
+}
+
+.reiki-session-card__desc {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.8;
+  flex: 1;
+  margin-bottom: 12px;
+}
+
+.reiki-session-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 12px;
+  font-size: 13px;
+  color: #555;
+}
+
+.reiki-session-card__price {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  color: #a03060;
+}
+
+/* ─── FAQ accordion ─────────────────────────────────────────────────── */
+.reiki-faq {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.reiki-faq__item {
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+.reiki-faq__q {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background: #f8f9fa;
+  border: none;
+  cursor: pointer;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  text-align: left;
+  transition: background 0.2s;
+  gap: 12px;
+}
+
+.reiki-faq__q:hover { background: #f0f0f0; }
+.reiki-faq__q.open { background: #f9f0f4; color: #a03060; }
+
+.reiki-faq__chevron {
+  font-size: 20px;
+  font-weight: 300;
+  flex-shrink: 0;
+  color: #a03060;
+}
+
+.reiki-faq__a {
+  padding: 16px 20px;
+  border-top: 1px solid #f0f0f0;
+  background: #ffffff;
+}
+
+.reiki-faq__a p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.8;
+  padding-bottom: 0;
+}
+
+/* ─── Testimonials ──────────────────────────────────────────────────── */
+.reiki-testimonials-section {
+  background: linear-gradient(135deg, #3a1a1a 0%, #a03060 100%);
+}
+
+.reiki-testimonials-section .section-title {
+  color: #ffffff;
+}
+
+/* ─── Responsive ────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .reiki-intro { grid-template-columns: 1fr; }
+  .reiki-sessions__grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+}

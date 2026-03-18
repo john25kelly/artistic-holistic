@@ -1,0 +1,181 @@
+/* ─── Shared page-hero (used by all pages) ─────────────────────────── */
+.page-hero {
+  position: relative;
+  min-height: 340px;
+  display: flex;
+  align-items: flex-end;
+  padding-bottom: 48px;
+  background: linear-gradient(135deg, #1a3a50 0%, #30709c 100%);
+}
+
+.page-hero--art     { background: linear-gradient(135deg, #2c1a50 0%, #5a30a0 100%); }
+.page-hero--yoga    { background: linear-gradient(135deg, #1a3a30 0%, #30a080 100%); }
+.page-hero--reiki   { background: linear-gradient(135deg, #3a1a1a 0%, #a03060 100%); }
+.page-hero--shop    { background: linear-gradient(135deg, #1a2a3a 0%, #305080 100%); }
+.page-hero--gallery { background: linear-gradient(135deg, #1a3a50 0%, #30709c 100%); }
+.page-hero--contact { background: linear-gradient(135deg, #1a3a20 0%, #3a7050 100%); }
+
+.page-hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+}
+
+.page-hero__content {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #ffffff;
+}
+
+.page-hero__eyebrow {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.65);
+  padding-bottom: 4px;
+  margin-bottom: 0;
+}
+
+.page-hero__content h1 {
+  color: #ffffff;
+  font-size: clamp(28px, 5vw, 48px);
+  padding-bottom: 8px;
+}
+
+.page-hero__content > p {
+  color: rgba(255,255,255,0.85);
+  font-size: 15px;
+  max-width: 560px;
+  padding-bottom: 0;
+}
+
+/* ─── Intro two-column ──────────────────────────────────────────────── */
+.art-intro {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 50px;
+  align-items: start;
+}
+
+.art-intro__features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.art-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  background: #f0f6fa;
+  border: 1px solid #d0e6f5;
+  border-radius: 8px;
+  padding: 20px 12px;
+  text-align: center;
+}
+
+.art-feature__icon { font-size: 28px; }
+
+.art-feature__label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: #30709c;
+}
+
+/* ─── Class cards grid ──────────────────────────────────────────────── */
+.art-classes__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.art-class-card {
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.art-class-card:hover {
+  box-shadow: 0 6px 24px rgba(0,0,0,0.09);
+  transform: translateY(-3px);
+}
+
+.art-class-card__level {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+  width: fit-content;
+}
+
+.art-class-card__title {
+  font-size: 17px;
+  color: #333;
+  margin-bottom: 8px;
+  padding-bottom: 0;
+}
+
+.art-class-card__desc {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.8;
+  flex: 1;
+  margin-bottom: 12px;
+}
+
+.art-class-card__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  font-size: 13px;
+  color: #555;
+  border-top: 1px solid #f0f0f0;
+  padding-top: 12px;
+}
+
+/* ─── Testimonials ──────────────────────────────────────────────────── */
+.art-testimonials-section {
+  background: linear-gradient(135deg, #1a3a50 0%, #30709c 100%);
+}
+
+.art-testimonials-section .section-title {
+  color: #ffffff;
+}
+
+/* ─── CTA strip ─────────────────────────────────────────────────────── */
+.art-cta { background-color: #f0f6fa; }
+
+.art-cta p {
+  max-width: 540px;
+  margin: 0 auto;
+  color: #555;
+}
+
+/* ─── Responsive ────────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .art-intro { grid-template-columns: 1fr; }
+  .art-intro__features { grid-template-columns: repeat(4, 1fr); }
+  .art-classes__grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .art-intro__features { grid-template-columns: repeat(2, 1fr); }
+  .art-classes__grid { grid-template-columns: 1fr; }
+}
+

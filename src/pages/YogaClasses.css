@@ -1,0 +1,105 @@
+.yoga-benefits__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.yoga-benefit-card {
+  background: #f8f9fa;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 28px 22px;
+  text-align: center;
+  transition: box-shadow 0.3s, transform 0.3s;
+}
+
+.yoga-benefit-card:hover {
+  box-shadow: 0 6px 20px rgba(48,160,128,0.12);
+  transform: translateY(-3px);
+}
+
+.yoga-benefit-card__icon { font-size: 36px; display: block; margin-bottom: 12px; }
+
+.yoga-benefit-card__title {
+  font-size: 15px;
+  color: #30709c;
+  margin-bottom: 8px;
+  padding-bottom: 0;
+}
+
+.yoga-benefit-card__text {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.8;
+  padding-bottom: 0;
+}
+
+.yoga-sessions-section { background-color: #f0f6fa; }
+
+.yoga-sessions__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.yoga-bring { background-color: #ffffff; }
+
+.yoga-bring__inner {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 50px;
+  align-items: start;
+}
+
+.yoga-bring__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.yoga-bring__list li {
+  padding: 10px 0 10px 24px;
+  position: relative;
+  color: #555;
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.yoga-bring__list li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #30a080;
+  font-weight: 700;
+}
+
+.yoga-bring__cta-box {
+  background: linear-gradient(135deg, #1a3a30 0%, #30a080 100%);
+  border-radius: 8px;
+  padding: 32px 28px;
+  color: #ffffff;
+}
+
+.yoga-bring__cta-box h3 {
+  color: #ffffff;
+  font-size: 20px;
+  margin-bottom: 12px;
+  padding-bottom: 0;
+}
+
+.yoga-bring__cta-box p {
+  color: rgba(255,255,255,0.85);
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 900px) {
+  .yoga-benefits__grid { grid-template-columns: repeat(2, 1fr); }
+  .yoga-sessions__grid { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+  .yoga-bring__inner { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 500px) {
+  .yoga-benefits__grid { grid-template-columns: 1fr; max-width: 360px; margin: 0 auto; }
+}
+
