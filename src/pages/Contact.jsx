@@ -2,9 +2,13 @@ import React, { useState } from 'react';
 import './FineArtClasses.css';
 import './Contact.css';
 
+const FORMSUBMIT_URL = 'https://formsubmit.co/ajax/pmccormickart@gmail.com';
+
 export default function Contact() {
   const [form, setForm] = useState({ firstName: '', lastName: '', email: '', subject: '', message: '' });
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [sendError, setSendError] = useState(false);
   const [errors, setErrors] = useState({});
 
   const validate = () => {
@@ -19,12 +23,37 @@ export default function Contact() {
 
   const handleChange = (e) => setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const errs = validate();
     if (Object.keys(errs).length) { setErrors(errs); return; }
     setErrors({});
-    setSubmitted(true);
+    setSending(true);
+    setSendError(false);
+    try {
+      const res = await fetch(FORMSUBMIT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          name: `${form.firstName} ${form.lastName}`,
+          email: form.email,
+          subject: form.subject,
+          message: form.message,
+          _subject: `Artistic Holistic Enquiry – ${form.subject}`,
+          _captcha: 'false',
+        }),
+      });
+      const data = await res.json();
+      if (data.success === 'true' || data.success === true) {
+        setSubmitted(true);
+      } else {
+        setSendError(true);
+      }
+    } catch {
+      setSendError(true);
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
@@ -177,7 +206,14 @@ export default function Contact() {
                     {errors.message && <span className="contact-form__error">{errors.message}</span>}
                   </div>
 
-                  <button type="submit" className="btn contact-form__submit">Message Me</button>
+                  {sendError && (
+                    <p className="contact-form__send-error">
+                      Sorry, something went wrong. Please try again or call 07762 823133.
+                    </p>
+                  )}
+                  <button type="submit" className="btn contact-form__submit" disabled={sending}>
+                    {sending ? 'Sending…' : 'Message Me'}
+                  </button>
                 </form>
               )}
             </div>
