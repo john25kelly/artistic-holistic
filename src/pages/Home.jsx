@@ -17,10 +17,12 @@ const testimonials = [
   },
 ];
 
+const pub = process.env.PUBLIC_URL;
+
 const shopItems = [
-  { title: '17 : The Old Lamps', price: '£300.00' },
-  { title: '26 : The Laneway – Limited Edition Print', price: '£70.00' },
-  { title: '30 : The Old Building', price: '£250.00' },
+  { title: '17 : The Old Lamps',                       price: '£300.00', image: `${pub}/images/shop/old-lamps.jpg` },
+  { title: '26 : The Laneway – Limited Edition Print', price: '£70.00',  image: `${pub}/images/shop/the-laneway.jpg` },
+  { title: '30 : The Old Building',                    price: '£250.00', image: `${pub}/images/shop/the-old-building.jpg` },
 ];
 
 export default function Home() {
@@ -93,7 +95,9 @@ export default function Home() {
           <div className="home-shop__grid">
             {shopItems.map((item) => (
               <div className="home-shop__item" key={item.title}>
-                <div className="home-shop__img-placeholder" />
+                <div className="home-shop__img-wrap">
+                  <img src={item.image} alt={item.title} className="home-shop__img" />
+                </div>
                 <h4 className="home-shop__item-title">{item.title}</h4>
                 <p className="home-shop__item-price">{item.price}</p>
               </div>
