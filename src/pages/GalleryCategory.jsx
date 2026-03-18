@@ -67,7 +67,7 @@ const categoryData = {
     heroClass: 'page-hero--gallery',
     description: 'Detailed and evocative portraits of animals — from Irish wildlife to beloved pets.',
     items: [
-      { id: 1, title: 'Mooove Over',                    image: `${pub}/images/gallery/animals/moove.jpg` },
+      { id: 1, title: 'Mooove Over – Sold but Repeatable', image: `${pub}/images/gallery/animals/moove.jpg` },
       { id: 2, title: 'The Heron (Sold – Repeatable)', image: `${pub}/images/gallery/animals/the-heron.jpg` },
       { id: 3, title: 'Animal Study',                   image: `${pub}/images/gallery/animals/animals-3.jpg` },
       { id: 4, title: 'Animal Study II',                image: `${pub}/images/gallery/animals/animals-4.jpg` },

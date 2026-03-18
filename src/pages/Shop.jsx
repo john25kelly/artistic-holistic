@@ -14,7 +14,7 @@ const products = [
   { id: 6,  title: 'Look What I Nearly Mist.',                  price: '360.00', badge: 'Painting', image: `${pub}/images/shop/look-what-i-nearly-mist.jpg` },
   { id: 7,  title: 'The Wave – SOLD but Repeatable',            price: null,     sold: true,  badge: 'Painting', image: `${pub}/images/shop/the-wave.jpg` },
   { id: 8,  title: '34 : We Are Sailing',                       price: '190.00', badge: 'Painting', image: `${pub}/images/shop/we-are-sailing.png` },
-  { id: 9,  title: 'Mooove Over',                               price: '300.00', badge: 'Painting', image: `${pub}/images/shop/mooove-over.jpg` },
+  { id: 9,  title: 'Mooove Over – Sold but Repeatable',         price: '300.00', badge: 'Painting', image: `${pub}/images/shop/mooove-over.jpg` },
   { id: 10, title: '30 : The Old Building',                     price: '250.00', badge: 'Painting', image: `${pub}/images/shop/the-old-building.jpg` },
   { id: 11, title: '57 : Water Lillies',                        price: '150.00', badge: 'Painting', image: `${pub}/images/shop/water-lillies.jpg` },
   { id: 12, title: '26 : The Laneway – Limited Edition Print',  price: '70.00',  badge: 'Print',    image: `${pub}/images/shop/the-laneway.jpg` },
