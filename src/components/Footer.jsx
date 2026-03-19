@@ -34,9 +34,6 @@ export default function Footer() {
           <h4>Classes</h4>
           <ul className="footer__links">
             <li><Link to="/fine-art-classes">Painting &amp; Drawing</Link></li>
-            <li><Link to="/gallery/landscapes">Landscapes</Link></li>
-            <li><Link to="/gallery/seascapes">Seascapes</Link></li>
-            <li><Link to="/gallery/modern-art">Modern Art</Link></li>
             <li><Link to="/yoga-classes">Yoga – Mon 6pm-7pm</Link></li>
             <li><Link to="/reiki-healing">Reiki Healing</Link></li>
           </ul>
