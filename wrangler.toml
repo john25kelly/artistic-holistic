@@ -2,10 +2,9 @@ name = "artistic-holistic"
 compatibility_date = "2024-09-23"
 
 # PUBLIC_URL=/ overrides the /artistic-holistic/ homepage set in package.json (that
-# prefix is only needed for GitHub Pages).  The rm step drops the two home-page
-# videos (40-58 MiB each) which exceed Cloudflare Workers' 25 MiB per-asset limit.
+# prefix is only needed for GitHub Pages).
 [build]
-command = "PUBLIC_URL=/ npm run build && rm -f build/images/home/*.mp4"
+command = "PUBLIC_URL=/ npm run build"
 
 # Serve the React production build as a static Workers Assets site.
 # The CI build step (npm run build) must run before wrangler deploy.

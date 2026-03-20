@@ -150,12 +150,24 @@ export default function Home() {
             <div className="section-divider" style={{ margin: '0 auto' }} />
           </div>
           <div className="home-videos__grid">
-            <video controls className="home-videos__video" preload="metadata">
-              <source src={`${pub}/images/home/video-1.mp4`} type="video/mp4" />
-            </video>
-            <video controls className="home-videos__video" preload="metadata">
-              <source src={`${pub}/images/home/video-2.mp4`} type="video/mp4" />
-            </video>
+            <div className="home-videos__wrapper">
+              <iframe
+                className="home-videos__iframe"
+                src="https://drive.google.com/file/d/1VexzgtVwrjOQgPY6Abg3SAT3gdGAstCO/preview"
+                title="Patricia in action – video 1"
+                allow="autoplay"
+                allowFullScreen
+              />
+            </div>
+            <div className="home-videos__wrapper">
+              <iframe
+                className="home-videos__iframe"
+                src="https://drive.google.com/file/d/1IW2kFkjC8HiVmblakD6WKj6dZjcNgIKN/preview"
+                title="Patricia in action – video 2"
+                allow="autoplay"
+                allowFullScreen
+              />
+            </div>
           </div>
         </div>
       </section>
