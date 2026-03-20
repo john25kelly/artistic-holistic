@@ -67,8 +67,9 @@ export function useRandomDriveImages(count = 3) {
 
     fetchAll();
     return () => { cancelled = true; };
-  }, []); // empty deps → new random selection on every page mount
+  }, [count]); // re-run if caller changes the requested count
 
   return { images, loading, error };
 }
+
 
