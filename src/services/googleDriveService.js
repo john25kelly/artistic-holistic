@@ -16,16 +16,13 @@ const DRIVE_FILES   = 'https://www.googleapis.com/drive/v3/files';
 const FOLDER_MIME   = 'application/vnd.google-apps.folder';
 
 /**
- * Returns the direct Google CDN URL for a Drive image file.
- * Format: lh3.googleusercontent.com/d/<fileId>=w<width>
- *
- * This is the final destination that drive.google.com/thumbnail resolves to,
- * used directly here to avoid the redirect and ensure reliable <img> loading.
- * The =w1200 suffix scales to max-width 1200px while preserving aspect ratio.
- * Works for any publicly-shared Drive image without OAuth.
+ * Returns a Google Drive thumbnail URL for use in <img> tags.
+ * This is Google's supported browser-facing image endpoint for Drive files.
+ * sz=w1200 scales to max-width 1200px with aspect ratio preserved (no cropping).
+ * Works for publicly-shared files without authentication.
  */
 export function getDriveImageUrl(fileId) {
-  return `https://lh3.googleusercontent.com/d/${fileId}=w1200`;
+  return `https://drive.google.com/thumbnail?id=${fileId}&sz=w1200`;
 }
 
 /**
