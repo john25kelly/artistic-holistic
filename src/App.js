@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import FineArtClasses from './pages/FineArtClasses';
 import YogaClasses from './pages/YogaClasses';
@@ -14,6 +15,7 @@ import './App.css';
 function App() {
   return (
     <Router basename={process.env.PUBLIC_URL}>
+      <ScrollToTop />
       <Header />
       <main className="page-content">
         <Routes>
