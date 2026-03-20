@@ -140,9 +140,9 @@ export default function Home() {
       <section className="section home-shop">
         <div className="container">
           <div className="text-center" style={{ marginBottom: '32px' }}>
-            <h2 className="section-title">Art For Sale</h2>
+            <h2 className="section-title">Featured Artwork</h2>
             <div className="section-divider" style={{ margin: '0 auto 16px' }} />
-            <p>Here is a small selection of my paintings. Please visit the Gallery to see more art for sale.</p>
+            <p>A selection of original paintings available to buy. Visit the Gallery to browse the full collection.</p>
           </div>
           <div className="home-shop__grid">
             {[sale1, sale2, sale3].filter(Boolean).map((item) => (

@@ -49,7 +49,7 @@ export default function YogaClasses() {
           {/* Featured class card */}
           <div
             className="yoga-featured-class"
-            style={{ backgroundImage: `url(${process.env.PUBLIC_URL}/images/shop/yoga-class.jpg)` }}
+ page            style={{ backgroundImage: `url(https://artisticholistic.com/wp-content/uploads/2021/06/online-yoga-classes-artistic-holistic-300x300.jpg)` }}
           >
             <div className="yoga-featured-class__badge">Now Available</div>
             <h3 className="yoga-featured-class__title">Yoga Class, Live and on-line</h3>
