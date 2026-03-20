@@ -4,7 +4,7 @@ compatibility_date = "2024-09-23"
 # PUBLIC_URL=/ overrides the /artistic-holistic/ homepage set in package.json (that
 # prefix is only needed for GitHub Pages).
 [build]
-command = "PUBLIC_URL=/ npm run build"
+command = "REACT_APP_GOOGLE_API_KEY=AIzaSyBR-I_CqNBwFw-B1dpsVuZDlSFM57IMqME PUBLIC_URL=/ npm run build"
 
 # Serve the React production build as a static Workers Assets site.
 # The CI build step (npm run build) must run before wrangler deploy.
