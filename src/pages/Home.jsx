@@ -19,12 +19,11 @@ const testimonials = [
 ];
 
 export default function Home() {
-  // Fetch 8 random gallery images from Drive on every page load:
-  //  [0], [1]        → ARTISTIC / HOLISTIC split-panel backgrounds
-  //  [2], [3], [4]   → photo strip
-  //  [5], [6], [7]   → Art for Sale preview
-  const { images } = useRandomDriveImages(8);
-  const [panel1, panel2, strip1, strip2, strip3, sale1, sale2, sale3] = images;
+  // Fetch 3 random gallery images from Drive on every page load for the Featured Artwork section
+  const { images } = useRandomDriveImages(3);
+  const [sale1, sale2, sale3] = images;
+
+  const pub = process.env.PUBLIC_URL;
 
   return (
     <>
@@ -48,17 +47,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ARTISTIC / HOLISTIC split panels – random Drive images as backgrounds */}
+      {/* ARTISTIC / HOLISTIC split panels – solid blue CSS background */}
       <section className="home-split">
         <div className="home-split__panel">
-          {panel1 && (
-            <img
-              src={panel1.url}
-              alt=""
-              className="home-split__bg-img"
-              referrerPolicy="no-referrer"
-            />
-          )}
           <div className="home-split__overlay" />
           <div className="home-split__content">
             <h2>ARTISTIC</h2>
@@ -67,14 +58,6 @@ export default function Home() {
           </div>
         </div>
         <div className="home-split__panel">
-          {panel2 && (
-            <img
-              src={panel2.url}
-              alt=""
-              className="home-split__bg-img"
-              referrerPolicy="no-referrer"
-            />
-          )}
           <div className="home-split__overlay" />
           <div className="home-split__content">
             <h2>HOLISTIC</h2>
@@ -84,20 +67,11 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Photo strip – 3 random Drive images */}
+      {/* Photo strip – static local images */}
       <div className="home-photo-strip">
-        {[strip1, strip2, strip3].map((img, i) =>
-          img ? (
-            <img
-              key={img.id}
-              src={img.url}
-              alt={img.title}
-              referrerPolicy="no-referrer"
-            />
-          ) : (
-            <div key={i} className="home-photo-strip__placeholder" />
-          )
-        )}
+        <img src={`${pub}/images/home/strip-1.jpg`} alt="Fine art painting class" />
+        <img src={`${pub}/images/home/strip-2.jpg`} alt="Fine art and yoga" />
+        <img src={`${pub}/images/home/strip-3.jpg`} alt="Outdoor painting" />
       </div>
 
       {/* Painting Classes intro */}
