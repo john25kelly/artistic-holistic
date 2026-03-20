@@ -47,9 +47,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ARTISTIC / HOLISTIC split panels – solid blue CSS background */}
+      {/* ARTISTIC / HOLISTIC split panels */}
       <section className="home-split">
         <div className="home-split__panel">
+          <img src={`${pub}/images/home/bg-artistic.jpg`} alt="" className="home-split__bg-img" />
           <div className="home-split__overlay" />
           <div className="home-split__content">
             <h2>ARTISTIC</h2>
@@ -58,6 +59,7 @@ export default function Home() {
           </div>
         </div>
         <div className="home-split__panel">
+          <img src={`${pub}/images/home/bg-holistic.jpg`} alt="" className="home-split__bg-img" />
           <div className="home-split__overlay" />
           <div className="home-split__content">
             <h2>HOLISTIC</h2>
