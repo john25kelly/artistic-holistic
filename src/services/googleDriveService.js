@@ -16,12 +16,13 @@ const DRIVE_FILES   = 'https://www.googleapis.com/drive/v3/files';
 const FOLDER_MIME   = 'application/vnd.google-apps.folder';
 
 /**
- * Returns a URL that renders the Drive file as an image.
- * Works for publicly-shared files without OAuth.
- * The sz parameter controls the max width returned.
+ * Returns a URL that serves the original Drive file content.
+ * Uses the direct export URL so Google does NOT resize, crop or
+ * re-encode the image – the browser receives the original file.
+ * Works for any publicly-shared image file without OAuth.
  */
-export function getDriveImageUrl(fileId, width = 900) {
-  return `https://drive.google.com/thumbnail?id=${fileId}&sz=w${width}`;
+export function getDriveImageUrl(fileId) {
+  return `https://drive.google.com/uc?export=view&id=${fileId}`;
 }
 
 /**
