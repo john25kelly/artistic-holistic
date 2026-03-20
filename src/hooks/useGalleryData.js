@@ -59,8 +59,10 @@ export function useGalleryData(categorySlug) {
           };
         });
 
+        console.log('[Gallery] items parsed:', parsed.length, parsed[0] ? { title: parsed[0].title, image: parsed[0].image } : 'none');
         if (!cancelled) setItems(parsed);
       } catch (err) {
+        console.error('[Gallery] fetch error:', err.message);
         if (!cancelled) setError(err.message);
       } finally {
         if (!cancelled) setLoading(false);
