@@ -2,39 +2,46 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './FineArtClasses.css';
 import './Gallery.css';
+import { useGalleryCategories } from '../hooks/useGalleryCategories';
 
-const categories = [
+/**
+ * Static metadata for the four gallery categories.
+ * Artwork counts are fetched live from Google Drive via useGalleryCategories.
+ */
+const CATEGORIES = [
   {
-    label: 'Landscapes',
-    path: '/gallery/landscapes',
-    emoji: '🌄',
-    count: 16,
+    slug:        'landscapes',
+    label:       'Landscapes',
+    path:        '/gallery/landscapes',
+    emoji:       '🌄',
     description: 'Rolling green hills, misty mountains and the wild Irish countryside captured in oil, watercolour and acrylic.',
   },
   {
-    label: 'Seascapes',
-    path: '/gallery/seascapes',
-    emoji: '🌊',
-    count: 14,
+    slug:        'seascapes',
+    label:       'Seascapes',
+    path:        '/gallery/seascapes',
+    emoji:       '🌊',
     description: 'The dramatic Atlantic coastline — crashing waves, peaceful harbours and sun-drenched shores.',
   },
   {
-    label: 'Modern Art',
-    path: '/gallery/modern-art',
-    emoji: '🖼️',
-    count: 7,
+    slug:        'modern-art',
+    label:       'Modern Art',
+    path:        '/gallery/modern-art',
+    emoji:       '🖼️',
     description: 'Bold, expressive and abstract works exploring colour, form and emotion. A celebration of creative freedom.',
   },
   {
-    label: 'Animals',
-    path: '/gallery/animals',
-    emoji: '🦋',
-    count: 5,
+    slug:        'animals',
+    label:       'Animals',
+    path:        '/gallery/animals',
+    emoji:       '🦋',
     description: 'Detailed and evocative portraits of animals — from Irish wildlife to beloved pets, rendered with care.',
   },
 ];
 
 export default function Gallery() {
+  const { counts, loading: countsLoading } = useGalleryCategories();
+
   return (
     <>
       <section className="page-hero page-hero--gallery">
@@ -55,16 +62,21 @@ export default function Gallery() {
               Each piece in our gallery is created with passion and skill. Many works are available to purchase — <Link to="/contact">get in touch</Link> to enquire.
             </p>
           </div>
+
           <div className="gallery-categories__grid">
-            {categories.map((c) => (
-              <Link to={c.path} className="gallery-cat-card" key={c.label}>
+            {CATEGORIES.map((c) => (
+              <Link to={c.path} className="gallery-cat-card" key={c.slug}>
                 <div className="gallery-cat-card__image">
                   <span className="gallery-cat-card__emoji">{c.emoji}</span>
                 </div>
                 <div className="gallery-cat-card__body">
                   <div className="gallery-cat-card__header">
                     <h3 className="gallery-cat-card__title">{c.label}</h3>
-                    <span className="gallery-cat-card__count">{c.count} works</span>
+                    {!countsLoading && counts[c.slug] !== undefined && (
+                      <span className="gallery-cat-card__count">
+                        {counts[c.slug]} work{counts[c.slug] !== 1 ? 's' : ''}
+                      </span>
+                    )}
                   </div>
                   <p className="gallery-cat-card__desc">{c.description}</p>
                   <span className="gallery-cat-card__link">View collection →</span>
