@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Home.css';
+import { useRandomDriveImages } from '../hooks/useRandomDriveImages';
 
 const testimonials = [
   {
@@ -17,18 +18,17 @@ const testimonials = [
   },
 ];
 
-const pub = process.env.PUBLIC_URL;
-
-const shopItems = [
-  { title: '17 : The Old Lamps',                       price: '£300.00', image: `${pub}/images/shop/old-lamps.jpg` },
-  { title: '26 : The Laneway – Limited Edition Print', price: '£70.00',  image: `${pub}/images/shop/the-laneway.jpg` },
-  { title: '30 : The Old Building',                    price: '£250.00', image: `${pub}/images/shop/the-old-building.jpg` },
-];
-
 export default function Home() {
+  // Fetch 8 random gallery images from Drive on every page load:
+  //  [0], [1]        → ARTISTIC / HOLISTIC split-panel backgrounds
+  //  [2], [3], [4]   → photo strip
+  //  [5], [6], [7]   → Art for Sale preview
+  const { images } = useRandomDriveImages(8);
+  const [panel1, panel2, strip1, strip2, strip3, sale1, sale2, sale3] = images;
+
   return (
     <>
-      {/* Hero */}
+      {/* Hero – pure CSS gradient, no image file needed */}
       <section className="home-hero">
         <div className="home-hero__overlay" />
         <div className="home-hero__content">
@@ -48,12 +48,17 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ARTISTIC / HOLISTIC split panels */}
+      {/* ARTISTIC / HOLISTIC split panels – random Drive images as backgrounds */}
       <section className="home-split">
-        <div
-          className="home-split__panel"
-          style={{ backgroundImage: `url(${pub}/images/home/bg-artistic.jpg)` }}
-        >
+        <div className="home-split__panel">
+          {panel1 && (
+            <img
+              src={panel1.url}
+              alt=""
+              className="home-split__bg-img"
+              referrerPolicy="no-referrer"
+            />
+          )}
           <div className="home-split__overlay" />
           <div className="home-split__content">
             <h2>ARTISTIC</h2>
@@ -61,10 +66,15 @@ export default function Home() {
             <Link to="/fine-art-classes" className="btn">Art Classes</Link>
           </div>
         </div>
-        <div
-          className="home-split__panel"
-          style={{ backgroundImage: `url(${pub}/images/home/bg-holistic.jpg)` }}
-        >
+        <div className="home-split__panel">
+          {panel2 && (
+            <img
+              src={panel2.url}
+              alt=""
+              className="home-split__bg-img"
+              referrerPolicy="no-referrer"
+            />
+          )}
           <div className="home-split__overlay" />
           <div className="home-split__content">
             <h2>HOLISTIC</h2>
@@ -74,11 +84,20 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Photo strip */}
+      {/* Photo strip – 3 random Drive images */}
       <div className="home-photo-strip">
-        <img src={`${pub}/images/home/strip-1.jpg`} alt="Fine art painting class" />
-        <img src={`${pub}/images/home/strip-2.jpg`} alt="Fine art and yoga" />
-        <img src={`${pub}/images/home/strip-3.jpg`} alt="Outdoor painting" />
+        {[strip1, strip2, strip3].map((img, i) =>
+          img ? (
+            <img
+              key={img.id}
+              src={img.url}
+              alt={img.title}
+              referrerPolicy="no-referrer"
+            />
+          ) : (
+            <div key={i} className="home-photo-strip__placeholder" />
+          )
+        )}
       </div>
 
       {/* Painting Classes intro */}
@@ -117,30 +136,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Art for Sale */}
+      {/* Art for Sale – 3 random Drive images with parsed title/price */}
       <section className="section home-shop">
         <div className="container">
           <div className="text-center" style={{ marginBottom: '32px' }}>
             <h2 className="section-title">Art For Sale</h2>
             <div className="section-divider" style={{ margin: '0 auto 16px' }} />
-              <p>Here is a small selection of my paintings. Please visit the Gallery to see more art for sale.</p>
+            <p>Here is a small selection of my paintings. Please visit the Gallery to see more art for sale.</p>
           </div>
           <div className="home-shop__grid">
-            {shopItems.map((item) => (
-              <div className="home-shop__item" key={item.title}>
+            {[sale1, sale2, sale3].filter(Boolean).map((item) => (
+              <div className="home-shop__item" key={item.id}>
                 <div className="home-shop__img-wrap">
-                  <img src={item.image} alt={item.title} className="home-shop__img" />
+                  <img
+                    src={item.url}
+                    alt={item.title}
+                    className="home-shop__img"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
                 <h4 className="home-shop__item-title">{item.title}</h4>
-                <p className="home-shop__item-price">{item.price}</p>
+                <p className="home-shop__item-price">
+                  {item.price ? `£${item.price}` : '£TBC'}
+                </p>
               </div>
             ))}
           </div>
           <div className="text-center" style={{ marginTop: '32px' }}>
-              <Link to="/gallery" className="btn">View Gallery</Link>
+            <Link to="/gallery" className="btn">View Gallery</Link>
           </div>
         </div>
-        </section>
+      </section>
 
       {/* Videos */}
       <section className="section home-videos">

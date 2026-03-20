@@ -97,8 +97,7 @@
 .home-split__panel {
   flex: 1;
   position: relative;
-  background-size: cover;
-  background-position: center;
+  background-color: #1a3a50; /* fallback colour while Drive image loads */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -110,11 +109,27 @@
   flex: 1.15;
 }
 
+/* Absolutely-positioned Drive image that fills the panel */
+.home-split__bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+  transition: transform 0.4s ease;
+}
+
+.home-split__panel:hover .home-split__bg-img {
+  transform: scale(1.04);
+}
+
 .home-split__overlay {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.50);
   transition: background 0.3s;
+  z-index: 1;
 }
 
 .home-split__panel:hover .home-split__overlay {
@@ -123,7 +138,7 @@
 
 .home-split__content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   text-align: center;
   padding: 20px;
 }
@@ -162,6 +177,21 @@
 
 .home-photo-strip img:hover {
   transform: scale(1.04);
+}
+
+/* Shown while Drive images are still loading */
+.home-photo-strip__placeholder {
+  width: 100%;
+  height: 100%;
+  background: #d4e6f1;
+  animation: shimmer 1.4s infinite linear;
+  background: linear-gradient(90deg, #d4e6f1 25%, #e8f4fc 50%, #d4e6f1 75%);
+  background-size: 200% 100%;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
 }
 
 /* ─── Videos ────────────────────────────────────────────────────────── */
