@@ -16,14 +16,14 @@ const DRIVE_FILES   = 'https://www.googleapis.com/drive/v3/files';
 const FOLDER_MIME   = 'application/vnd.google-apps.folder';
 
 /**
- * Returns a URL that serves the raw image bytes directly from the Drive API.
- * alt=media tells the API to return file content instead of metadata.
- * This goes through googleapis.com — the same domain as the working API
- * calls — so there are no thumbnail CDN, redirect, or cross-origin issues.
- * Works for publicly-shared files using the same API key.
+ * Returns a URL that serves the image directly from Google's CDN.
+ * The lh3.googleusercontent.com/d/ endpoint works for any publicly-shared
+ * Drive file without requiring OAuth — an API key is not needed here.
+ * The Drive API v3 alt=media endpoint requires OAuth 2.0 (not just an API
+ * key) when used from a browser, so it cannot be used in <img> src attributes.
  */
 export function getDriveImageUrl(fileId) {
-  return `https://www.googleapis.com/drive/v3/files/${fileId}?alt=media&key=${API_KEY}`;
+  return `https://lh3.googleusercontent.com/d/${fileId}`;
 }
 
 /**

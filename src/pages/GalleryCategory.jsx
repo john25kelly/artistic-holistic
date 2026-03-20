@@ -102,6 +102,7 @@ export default function GalleryCategory() {
                       src={item.image}
                       alt={item.title}
                       className="gallery-item__img"
+                      referrerPolicy="no-referrer"
                       onError={(e) => console.error('[Gallery] Image failed to load:', e.target.src)}
                       onLoad={() => console.log('[Gallery] Image loaded OK:', item.title)}
                     />
