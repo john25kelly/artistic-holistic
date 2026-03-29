@@ -101,7 +101,14 @@ export default function Contact() {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    Facebook
+                    Facebook – Fine Art
+                  </a>
+                  <a
+                    href="https://www.facebook.com/yogawithpatricia"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Facebook – Yoga
                   </a>
                   <a
                     href="https://www.instagram.com/patriciamccormick_art_n_yoga/"

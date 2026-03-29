@@ -13,7 +13,8 @@ export default function Footer() {
             Join us for painting classes, yoga sessions, and reiki healing.
           </p>
           <div className="footer__social">
-            <a href="https://www.facebook.com/patriciamccormickfineart" target="_blank" rel="noreferrer" aria-label="Facebook">f</a>
+            <a href="https://www.facebook.com/patriciamccormickfineart" target="_blank" rel="noreferrer" aria-label="Facebook – Fine Art">f</a>
+            <a href="https://www.facebook.com/yogawithpatricia" target="_blank" rel="noreferrer" aria-label="Facebook – Yoga">f</a>
             <a href="https://www.instagram.com/patriciamccormick_art_n_yoga/" target="_blank" rel="noreferrer" aria-label="Instagram">in</a>
           </div>
         </div>
@@ -51,7 +52,11 @@ export default function Footer() {
           </div>
           <div className="footer__contact-item">
             <span className="footer__contact-icon">📘</span>
-            <a href="https://www.facebook.com/patriciamccormickfineart" target="_blank" rel="noreferrer">Facebook</a>
+            <a href="https://www.facebook.com/patriciamccormickfineart" target="_blank" rel="noreferrer">Facebook (Fine Art)</a>
+          </div>
+          <div className="footer__contact-item">
+            <span className="footer__contact-icon">📘</span>
+            <a href="https://www.facebook.com/yogawithpatricia" target="_blank" rel="noreferrer">Facebook (Yoga)</a>
           </div>
           <div className="footer__contact-item">
             <span className="footer__contact-icon">📷</span>

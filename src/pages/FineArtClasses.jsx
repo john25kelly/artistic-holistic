@@ -145,7 +145,15 @@ export default function FineArtClasses() {
                   rel="noreferrer"
                   className="btn"
                 >
-                  Facebook
+                  Facebook – Fine Art
+                </a>
+                <a
+                  href="https://www.facebook.com/yogawithpatricia"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn"
+                >
+                  Facebook – Yoga
                 </a>
                 <Link to="/contact" className="btn btn-outline">Contact Me Today</Link>
               </div>
